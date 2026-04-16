@@ -8,6 +8,10 @@ const console = require("console");
 const app=express();
 app.use(cors());
 app.use(express.json())
+app.get("/", (_req, res) => {
+  res.send("Backend deployed successfully");
+});
+
 app.use("/api/movies",movieRoutes);
 app.use("/api/auth",authRoutes);
 
